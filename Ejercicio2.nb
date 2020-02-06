@@ -1,0 +1,865 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     35071,        857]
+NotebookOptionsPosition[     14381,        412]
+NotebookOutlinePosition[     32264,        825]
+CellTagsIndexPosition[     32221,        822]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Ejercicio 2. Campo de direcciones o de pendientes", "Title",
+ CellChangeTimes->{{3.789943572653749*^9, 
+  3.789943593480987*^9}},ExpressionUUID->"82a39173-be46-4004-a4e4-\
+5f8a1a5ce878"],
+
+Cell["\<\
+En Mathematica se pueden graficar campos de direcciones, que a mano podr\
+\[IAcute]an ser muy lentos, adem\[AAcute]s de que el visualizar un campo de \
+direcciones nos permite visualizar propiedades de los sistemas de ecuaciones \
+diferenciales sin necesitad de tener soluciones anal\[IAcute]ticas.\
+\>", "Text",
+ CellChangeTimes->{{3.789943752900037*^9, 
+  3.7899438205961027`*^9}},ExpressionUUID->"c1c66dcc-7997-4070-833e-\
+aba6bb3c4a2d"],
+
+Cell["\<\
+Primero comencemos con una ecuaci\[OAcute]n sencilla, por ejemplo y' = 3 - 2 y\
+\>", "Text",
+ CellChangeTimes->{{3.789943832243904*^9, 
+  3.789943865028016*^9}},ExpressionUUID->"d62d5d69-92fa-4534-a802-\
+a8af3daee32c"],
+
+Cell[BoxData[
+ RowBox[{"yprima", "=", 
+  RowBox[{"3", "-", 
+   RowBox[{"2", "*", "y"}]}]}]], "Input",
+ CellChangeTimes->{{3.789943905369997*^9, 3.789943917038905*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"856a1d42-604e-467a-8d2f-eb9742370bdd"],
+
+Cell["\<\
+Para poder graficar el campo de pendientes, debemos utilizar el comando \
+VectorPlot, el cual necesita tres argumentos b\[AAcute]sicos :
+        1) Las coordenadas del campo de pendientes  (el cambio en t, y el \
+cambio en y)
+    2) El rango de la gr\[AAcute]fica en t
+  3) El rango de la gr\[AAcute]fica en y\
+\>", "Text",
+ CellChangeTimes->{{3.7899439266264067`*^9, 3.789943932590435*^9}, {
+  3.7899440278300877`*^9, 3.7899440509328003`*^9}, {3.789944217939378*^9, 
+  3.7899443410881*^9}},ExpressionUUID->"6549917f-40e7-4b15-87b7-206616522cf5"],
+
+Cell[BoxData[
+ RowBox[{"VectorPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "yprima"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.78994437790619*^9, 3.7899444000144663`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"158dce43-04d6-4acc-bbb7-f6be6eda428c"],
+
+Cell["\<\
+Pero ahora \[DownQuestion]por qu\[EAcute] se ve tan mal? Las flechas son \
+todas de distinto tama\[NTilde]o, y cuesta trabajo visualizarlo. Para \
+corregirlo, vamos a agregar el siguiente argumento a la funci\[OAcute]n \
+VectorPlot\
+\>", "Text",
+ CellChangeTimes->{{3.789944411793219*^9, 
+  3.789944474117898*^9}},ExpressionUUID->"9614a701-f51a-4a83-95ea-\
+9288a6f69bc5"],
+
+Cell[BoxData[
+ RowBox[{"VectorPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "yprima"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"VectorScale", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Small", ",", "Automatic", ",", "None"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.789944478896777*^9, 3.7899444899978867`*^9}, {
+  3.789944565640806*^9, 3.78994458178032*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"b42d49aa-5ce9-44e2-8af3-d8bbe9e91c5f"],
+
+Cell["\<\
+No estar\[IAcute]a de m\[AAcute]s agregar los ejes y sus respectivas \
+etiquetas.\
+\>", "Text",
+ CellChangeTimes->{{3.7899445975666523`*^9, 
+  3.7899446301894503`*^9}},ExpressionUUID->"7bb27618-7395-474c-8e87-\
+58c49af62c0f"],
+
+Cell[BoxData[
+ RowBox[{"VectorPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "yprima"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"VectorScale", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Small", ",", "Automatic", ",", "None"}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Axes", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<dy/dt=3-2y\>\""}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7899446439231367`*^9, 3.7899446819306507`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"decd7b41-4a0f-438e-9593-ed8dd534a9fa"],
+
+Cell["\<\
+Ahora, nos gustar\[IAcute]a visualizar alguna de las soluciones, \
+\[DownExclamation]pero no sabemos qu\[EAcute] soluciones tiene esta ecuaci\
+\[OAcute]n! Si tan s\[OAcute]lo hubiera un comando que resolviera ecuaciones \
+diferenciales ...\
+\>", "Text",
+ CellChangeTimes->{{3.789944693347836*^9, 3.789944718009156*^9}, {
+  3.789944757960537*^9, 
+  3.789944822837154*^9}},ExpressionUUID->"3465e794-4f6b-4bc3-b42f-\
+8cda4b8907a7"],
+
+Cell[BoxData[
+ RowBox[{"solucion1", " ", "=", " ", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+       RowBox[{"3", "-", 
+        RowBox[{"2", 
+         RowBox[{"y", "[", "t", "]"}]}]}]}], ",", 
+      RowBox[{
+       RowBox[{"y", "[", "0", "]"}], "==", "2"}]}], "}"}], ",", 
+    RowBox[{"y", "[", "t", "]"}], ",", "t"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.789944829817363*^9, 3.7899448648468523`*^9}, {
+  3.78994506844302*^9, 3.789945120888792*^9}, {3.789945152866111*^9, 
+  3.789945167538344*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"c2c5460c-37fe-4c4b-978c-8c8f188396cb"],
+
+Cell["\<\
+Y con el comando Plot, podemos ver c\[OAcute]mo luce la soluci\[OAcute]n de \
+esta ecuaci\[OAcute]n :\
+\>", "Text",
+ CellChangeTimes->{{3.789945307504087*^9, 
+  3.7899453372606287`*^9}},ExpressionUUID->"c588c75b-28d0-4b3c-944d-\
+df58a5ab0a58"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"y", "[", "t", "]"}], "/.", "solucion1"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.789945428455558*^9, 3.78994546956397*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"bc1c5cd5-e098-4a04-bb23-2f05147130ce"],
+
+Cell["\<\
+\[DownExclamation]Es una linda ca\[IAcute]da exponencial! Sin embargo, nos \
+servir\[IAcute]a m\[AAcute]s poder visualizarla dentro del campo de \
+direcciones. Para ello, primero la almacenaremos en una variable.\
+\>", "Text",
+ CellChangeTimes->{{3.789945476028543*^9, 
+  3.789945545404502*^9}},ExpressionUUID->"6995170c-0f11-4c2c-9901-\
+5bd22b102356"],
+
+Cell[BoxData[
+ RowBox[{"grafica1", " ", "=", " ", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "[", "t", "]"}], "/.", "solucion1"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", 
+      RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.789945550628276*^9, 3.7899455599976597`*^9}, {
+  3.789945721758923*^9, 3.789945723927813*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"ab8acdcc-d87f-4795-b11d-fad9908921a9"],
+
+Cell["\<\
+Despu\[EAcute]s, tenemos que almacenar tambi\[EAcute]n el campo de \
+direcciones, para poder juntar ambas gr\[AAcute]ficas m\[AAcute]s adelante.\
+\>", "Text",
+ CellChangeTimes->{{3.789945566227887*^9, 
+  3.7899456227181664`*^9}},ExpressionUUID->"a49ed9c3-a67c-40c6-b5d4-\
+39343f89cf5a"],
+
+Cell[BoxData[
+ RowBox[{"campodir", "=", 
+  RowBox[{"VectorPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "yprima"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", 
+      RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"y", ",", 
+      RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"VectorScale", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Small", ",", "Automatic", ",", "None"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Axes", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<t\>\"", ",", "\"\<dy/dt=3-2y\>\""}], "}"}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.789945630417108*^9, 3.7899456354734163`*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"0e80767e-e1d6-4498-8b2f-2a33167a8406"],
+
+Cell["\<\
+Ahora, usaremos el comando Show, que nos mostrar\[AAcute] ambas \
+gr\[AAcute]ficas en una sola.\
+\>", "Text",
+ CellChangeTimes->{{3.7899456622503757`*^9, 
+  3.789945695234275*^9}},ExpressionUUID->"a62f16d3-bb91-4645-b8d8-\
+340f83c0dbf2"],
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"campodir", ",", " ", "grafica1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.789945682113002*^9, 3.789945704816033*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"853bbab1-0280-4d1a-b495-4d8dff5113ae"],
+
+Cell["\<\
+\[DownExclamation]Y voil\[AAcute]! Ya podemos ver c\[OAcute]mo se comporta \
+una de las soluciones dentro del campo de direcciones. Pero para tener una \
+mejor perspectiva de este sistema, ser\[IAcute]a conveniente poder visualizar \
+m\[AAcute]s soluciones, con otras condiciones iniciales. \
+\[DownExclamation]Obteng\[AAcute]moslas!\
+\>", "Text",
+ CellChangeTimes->{{3.789945745799346*^9, 
+  3.789945863667507*^9}},ExpressionUUID->"fc287e46-f29a-4326-9c94-\
+abc5f85f419a"],
+
+Cell[BoxData[{
+ RowBox[{"solucion2", " ", "=", " ", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+       RowBox[{"3", "-", 
+        RowBox[{"2", 
+         RowBox[{"y", "[", "t", "]"}]}]}]}], ",", 
+      RowBox[{
+       RowBox[{"y", "[", "0", "]"}], "\[Equal]", "1.5"}]}], "}"}], ",", 
+    RowBox[{"y", "[", "t", "]"}], ",", "t"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"solucion3", " ", "=", " ", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+       RowBox[{"3", "-", 
+        RowBox[{"2", 
+         RowBox[{"y", "[", "t", "]"}]}]}]}], ",", 
+      RowBox[{
+       RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], ",", 
+    RowBox[{"y", "[", "t", "]"}], ",", "t"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"solucion4", " ", "=", " ", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+       RowBox[{"3", "-", 
+        RowBox[{"2", 
+         RowBox[{"y", "[", "t", "]"}]}]}]}], ",", 
+      RowBox[{
+       RowBox[{"y", "[", "0", "]"}], "\[Equal]", 
+       RowBox[{"-", "2"}]}]}], "}"}], ",", 
+    RowBox[{"y", "[", "t", "]"}], ",", "t"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"grafica2", " ", "=", " ", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "[", "t", "]"}], "/.", "solucion2"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", 
+      RowBox[{"-", "10"}], ",", "10"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"grafica3", " ", "=", " ", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "[", "t", "]"}], "/.", "solucion3"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", 
+      RowBox[{"-", "10"}], ",", "10"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"grafica4", " ", "=", " ", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "[", "t", "]"}], "/.", "solucion4"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", 
+      RowBox[{"-", "10"}], ",", "10"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.789945884333336*^9, 3.789945950834908*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"b6896347-ef43-491e-8942-6a4b4db01160"],
+
+Cell["Finalmente, grafiquemos todo junto :", "Text",
+ CellChangeTimes->{{3.7899459677974987`*^9, 
+  3.789945982181826*^9}},ExpressionUUID->"b3348ddc-76ab-4880-8c01-\
+fa63ced345c2"],
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+  "campodir", ",", " ", "grafica1", ",", "grafica2", ",", "grafica3", ",", 
+   "grafica4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7899459881168537`*^9, 3.7899460079725*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"bfb3c69b-f613-4b92-858f-5a30a111d8c1"],
+
+Cell["\<\
+\[DownExclamation]Muy bien! Ahora vemos m\[AAcute]s propiedades de este \
+sistema. \[DownQuestion]Qu\[EAcute] observan? \[DownQuestion]Todas las \
+soluciones convergen al mismo lugar? \[DownQuestion]Hay puntos de equilibrio?\
+\[DownQuestion]De qu\[EAcute] tipo?\
+\>", "Text",
+ CellChangeTimes->{{3.789946017219594*^9, 
+  3.78994607835074*^9}},ExpressionUUID->"6bade03e-e6ca-4ef5-9802-\
+d7e0cc68dc4b"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Ejercicio : Repite el mismo procedimiento para otras ecuaciones m\[AAcute]s \
+complicadas\
+\>", "Subtitle",
+ CellChangeTimes->{{3.789946086002987*^9, 
+  3.7899461371481333`*^9}},ExpressionUUID->"3350275d-8f19-462e-9e39-\
+5a6869c6964b"],
+
+Cell["\<\
+Ejemplos : y' = y (y - 2)^2
+y' = 3 y + t
+y' = 4 sin (t) - 3 y + 2\
+\>", "Text",
+ CellChangeTimes->{{3.78994614878671*^9, 
+  3.789946251287024*^9}},ExpressionUUID->"948da342-36a3-4250-8e94-\
+11f6f5531f12"],
+
+Cell["\<\
+Nota : El siguente comando borra todas las variables que hab\[IAcute]amos \
+definido antes, es \[UAcute]til para tener un reinicio fresco, y evitar \
+problemas m\[AAcute]s adelante.\
+\>", "Text",
+ CellChangeTimes->{{3.789946254447898*^9, 
+  3.7899463169549828`*^9}},ExpressionUUID->"c8c991c8-8d52-413e-ba28-\
+e774840280f3"],
+
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.789945222257928*^9, 3.7899452532953253`*^9}, {
+  3.789945284400565*^9, 3.7899452864231157`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"c4c9a020-0d76-45fe-96c7-bc10f9905325"],
+
+Cell["Y ahora, van ustedes!", "Text",
+ CellChangeTimes->{{3.789946319848297*^9, 
+  3.78994633889137*^9}},ExpressionUUID->"0ab3ac96-0fe0-4471-95af-\
+dc83ca9fc70b"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.789946341539237*^9},ExpressionUUID->"ad264bd7-8599-49c0-8f5e-\
+7b54cef6314c"]
+}, Open  ]]
+}, Open  ]]
+},
+ScreenStyleEnvironment->"Deployed",
+WindowSize->{1920, 1025},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"12.0 para Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    StyleData[All, "Working"], DockedCells -> {
+      Cell[
+       BoxData[
+        GridBox[{{
+           ButtonBox[
+           "\"CodeText\"", Appearance -> Automatic, ButtonFunction :> 
+            FrontEndExecute[{
+               FrontEnd`FrontEndToken[
+                InputNotebook[], "Style", "CodeText"]}], Evaluator -> 
+            Automatic, Method -> "Preemptive"], 
+           ButtonBox[
+           "\"GrayLine\"", Appearance -> "Button", BaseStyle -> "Paste", 
+            ButtonData -> Cell["", "GrayLine"]], "|", 
+           ButtonBox[
+           "\"Hyperlink Cell\"", Appearance -> Automatic, 
+            ButtonFunction :> (FrontEndExecute[{
+                FrontEnd`FrontEndToken[
+                 InputNotebook[], "Style", "Item"]}]; 
+             Block[{$CellContext`newdata}, $CellContext`newdata = 
+                DialogInput[{$CellContext`theurl = "", $CellContext`thename = 
+                   ""}, 
+                  Grid[{{"name:", 
+                    InputField[
+                    Dynamic[$CellContext`thename], String, ImageSize -> 
+                    400]}, {"url:", 
+                    InputField[
+                    Dynamic[$CellContext`theurl], String, ImageSize -> 400]}, {
+                    Button["OK", 
+                    DialogReturn[{$CellContext`thename, $CellContext`theurl}],
+                     ImageSize -> Medium], SpanFromLeft}}, Alignment -> 
+                   Right]]; If[
+                 
+                 And[$CellContext`newdata =!= $Canceled, $CellContext`newdata =!= \
+$Failed], 
+                 NotebookWrite[
+                  SelectedNotebook[], 
+                  Cell[
+                   TextData[
+                    ButtonBox[
+                    Part[$CellContext`newdata, 1], BaseStyle -> "Hyperlink", 
+                    ButtonData -> {
+                    URL[
+                    Part[$CellContext`newdata, 2]], None}, ButtonNote -> 
+                    Part[$CellContext`newdata, 2]]], "Item"]]]]), Evaluator -> 
+            Automatic, Method -> "Queued"], 
+           ButtonBox[
+           "\"Edit Hyperlink\"", Appearance -> Automatic, ButtonFunction :> 
+            Block[{$CellContext`sel, $CellContext`data, $CellContext`name, \
+$CellContext`newdata, $CellContext`opts}, SelectionMove[
+                SelectedNotebook[], All, CellContents]; $CellContext`sel = 
+               NotebookSelection[
+                 SelectedNotebook[]]; $CellContext`opts = 
+               Options[$CellContext`sel]; If[
+                FreeQ[$CellContext`opts, ButtonBoxOptions], 
+                MessageDialog[
+                "Couldn't identify hyperlink"], $CellContext`data = 
+                 ReplaceAll[ButtonData, 
+                   ReplaceAll[
+                   ButtonBoxOptions, $CellContext`opts]]; $CellContext`name = 
+                 Part[
+                   NotebookRead[
+                    SelectedNotebook[]], 1]; $CellContext`newdata = 
+                 DialogInput[{$CellContext`theurl = First[
+                    
+                    First[$CellContext`data]], $CellContext`thename = \
+$CellContext`name}, 
+                   Grid[{{"name:", 
+                    InputField[
+                    Dynamic[$CellContext`thename], String, ImageSize -> 
+                    400]}, {"url:", 
+                    InputField[
+                    Dynamic[$CellContext`theurl], String, ImageSize -> 400]}, {
+                    Button["OK", 
+                    DialogReturn[{$CellContext`thename, $CellContext`theurl}],
+                     ImageSize -> Medium], SpanFromLeft}}, Alignment -> 
+                    Right]]; If[
+                  
+                  And[$CellContext`newdata =!= $Canceled, \
+$CellContext`newdata =!= $Failed], 
+                  NotebookWrite[
+                   SelectedNotebook[], 
+                   Cell[
+                    TextData[
+                    ButtonBox[
+                    Part[$CellContext`newdata, 1], BaseStyle -> "Hyperlink", 
+                    ButtonData -> {
+                    URL[
+                    Part[$CellContext`newdata, 2]], None}, ButtonNote -> 
+                    Part[$CellContext`newdata, 2]]], "Text"]]]]], Evaluator -> 
+            Automatic, Method -> "Queued"]}}]], GeneratedCell -> True, 
+       CellAutoOverwrite -> True, Background -> GrayLevel[0.8]]}], 
+   Cell[
+    StyleData[All, "Deployed"], ShowGroupOpener -> False, ShowAutoSpellCheck -> 
+    False, MenuSortingValue -> 100], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Subsubtitle"], CellMargins -> {{66, 10}, {0, 40}}, FontSize -> 
+       20, FontColor -> RGBColor[0.2, 0.2, 0.2]], 
+      Cell[
+       StyleData["Subsubtitle", "Deployed"], ShowCellBracket -> False, 
+       Deployed -> True]}, Open]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Title"], CellMargins -> {{66, 10}, {Inherited, Inherited}}, 
+       CellChangeTimes -> {{3.765908595023244*^9, 3.765908595223349*^9}}, 
+       LineSpacing -> {0.85, 1, 1}, FontSize -> 60, FontWeight -> "Plain", 
+       FontTracking -> 0.2, FontColor -> RGBColor[0.866666, 0.066666, 0.]], 
+      Cell[
+       StyleData["Title", "Deployed"], ShowCellBracket -> False, Deployed -> 
+       True]}, Open]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Subsection"], CellMargins -> {{66, 10}, {0, 20}}, FontSize -> 
+       18, FontColor -> RGBColor[0.2, 0.2, 0.2]], 
+      Cell[
+       StyleData["Subsection", "Deployed"], ShowCellBracket -> False, 
+       Deployed -> True]}, Open]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["CodeText"], CellMargins -> {{66, 10}, {0, 20}}, FontSize -> 
+       16], 
+      Cell[
+       StyleData["CodeText", "Deployed"], ShowCellBracket -> False]}, Open]], 
+   
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["GrayLine"], Editable -> False, Selectable -> False, 
+       CellFrame -> {{0, 0}, {0, 1}}, CellMargins -> {{66, 66}, {10, 30}}, 
+       CellElementSpacings -> {"CellMinHeight" -> 1}, CellFrameMargins -> 0, 
+       CellFrameColor -> RGBColor[0.65098, 0.65098, 0.65098], 
+       CellSize -> {Automatic, 1}, MenuSortingValue -> 10000], 
+      Cell[
+       StyleData["GrayLine", "Deployed"], ShowCellBracket -> False, Deployed -> 
+       True]}, Open]], 
+   Cell[
+    StyleData["Input"], ShowPredictiveInterface -> False, FontFamily -> 
+    "Source Code Pro", FontSize -> 1.25 Inherited, FontWeight -> "SemiBold", 
+    FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Output"], ShowPredictiveInterface -> False, FontSize -> 
+    1.25 Inherited], 
+   Cell[
+    StyleData["Hyperlink"], FontColor -> 
+    RGBColor[0.13335, 0.5059, 0.82355], $CellContext`MousePointerAppearance -> 
+    "LinkHand", ActiveStyle -> "HyperlinkActive"], 
+   Cell[
+    StyleData["HyperlinkActive"], FontColor -> 
+    RGBColor[0.9882658121614405, 0.3424277103837644, 
+      0.030853742275120166`], $CellContext`MousePointerAppearance -> 
+    "LinkHand"], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["InputDeployed", StyleDefinitions -> StyleData["Input"]]], 
+      Cell[
+       StyleData["InputDeployed", "Deployed"], ShowCellBracket -> False, 
+       Deployed -> True]}, Open]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["OutputDeployed", StyleDefinitions -> StyleData["Output"]], 
+       CellMargins -> {{66., 10.}, {12., 30}}], 
+      Cell[
+       StyleData["OutputDeployed", "Deployed"], ShowCellBracket -> False, 
+       Deployed -> True]}, Open]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Item"], CellDingbat -> 
+       StyleBox["\[FilledSmallSquare]", 12, Alignment -> Baseline, 
+         RGBColor[0.749019, 0.749019, 0.749019]], 
+       CellMargins -> {{85, 10.}, {0, 10}}, 
+       CellChangeTimes -> {{3.765668112113057*^9, 3.765668127200433*^9}}, 
+       FontSize -> 16], 
+      Cell[
+       StyleData["Item", "Deployed"], ShowCellBracket -> False, Deployed -> 
+       True]}, Open]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Text"]], 
+      Cell[
+       StyleData["Text", "Deployed"], ShowCellBracket -> False, Deployed -> 
+       True]}, Open]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Abstract"], MenuSortingValue -> 10000], 
+      Cell[
+       StyleData["Abstract", "Deployed"], ShowCellBracket -> False, Deployed -> 
+       True]}, Open]], 
+   Cell[
+    StyleData["TtTHyperlinkTemplate"], 
+    TemplateBoxOptions -> {DisplayFunction :> (ButtonBox[
+        TagBox[
+         TemplateBox[{
+           StyleBox[#, 
+            TemplateSlotSequence[4]], 
+           StyleBox[#, "HyperlinkActive", 
+            TemplateSlotSequence[4]]}, "MouseoverTemplate", BaseStyle -> 
+          "Hyperlink"], 
+         MouseAppearanceTag["LinkHand"]], BaseStyle -> "Hyperlink", 
+        ButtonData :> #2, ButtonNote -> #3]& )}], 
+   Cell[
+    CellGroupData[{
+      Cell["Key Styles", "Subsubsection"], 
+      Cell[
+       StyleData["Key0old"], 
+       TemplateBoxOptions -> {DisplayFunction -> (FrameBox[
+           TagBox[
+            GridBox[{{
+               ItemBox[
+                
+                TemplateBox[{"\[ThickSpace]", #, "\[ThickSpace]"}, 
+                 "RowDefault"], Background -> GrayLevel[1], StripOnInput -> 
+                False]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Center}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+             False, GridBoxDividers -> {"Rows" -> {{None}}}, 
+             GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{1.45}}}, 
+             GridBoxSpacings -> {"Columns" -> {{0}}}, 
+             BaselinePosition -> {{1, 1}, Baseline}], "Grid"], RoundingRadius -> 
+           4, Background -> GrayLevel[0.9333333333333333], 
+           FrameMargins -> {{0, 0}, {-1, -1}}, FrameStyle -> {
+             GrayLevel[0.8352941176470589], 
+             AbsoluteThickness[1]}, BaselinePosition -> Baseline, 
+           StripOnInput -> False]& )}], 
+      Cell[
+       StyleData["KeyText"], FontFamily -> "Source Sans Pro", FontSize -> 
+       0.75 Inherited, FontWeight -> "DemiBold", FontSlant -> "Plain", 
+       FontColor -> GrayLevel[0.25]], 
+      Cell[
+       StyleData["Key0"], 
+       TemplateBoxOptions -> {DisplayFunction -> (StyleBox[
+           FrameBox[
+            TagBox[
+             GridBox[{{
+                ItemBox[
+                 TemplateBox[{"\[ThickSpace]", 
+                   StyleBox[#, "KeyText"], "\[ThickSpace]"}, "RowDefault"], 
+                 Background -> #2, StripOnInput -> False]}}, 
+              GridBoxAlignment -> {
+               "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+              False, GridBoxDividers -> {"Rows" -> {{None}}}, 
+              GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{1.45}}}, 
+              GridBoxSpacings -> {"Columns" -> {{0}}}, 
+              BaselinePosition -> {{1, 1}, Baseline}], "Grid"], 
+            RoundingRadius -> 4, Background -> GrayLevel[1], 
+            FrameMargins -> {{0, 0}, {-2, -2}}, FrameStyle -> {
+              GrayLevel[0.8352941176470589]}, BaselinePosition -> Baseline, 
+            StripOnInput -> False], ShowStringCharacters -> False]& )}], 
+      Cell[
+       StyleData["Key1"], 
+       TemplateBoxOptions -> {DisplayFunction -> (TemplateBox[{
+            TemplateBox[{#, 
+              GrayLevel[0.93]}, "Key0"], 
+            TemplateBox[{3}, "Spacer1"], 
+            TemplateBox[{#2, 
+              GrayLevel[0.99]}, "Key0"]}, "RowDefault"]& )}], 
+      Cell[
+       StyleData["Key1old"], 
+       TemplateBoxOptions -> {DisplayFunction -> (FrameBox[
+           TagBox[
+            GridBox[{{
+               ItemBox[
+                
+                TemplateBox[{"\[ThickSpace]", #, "\[ThickSpace]"}, 
+                 "RowDefault"], Background -> GrayLevel[0.9333333333333333], 
+                StripOnInput -> False], 
+               ItemBox[
+                
+                TemplateBox[{"\[ThickSpace]", #2, "\[ThickSpace]"}, 
+                 "RowDefault"], Background -> GrayLevel[1], StripOnInput -> 
+                False]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Center}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+             False, GridBoxDividers -> {
+              "ColumnsIndexed" -> {2 -> GrayLevel[0.8352941176470589]}, 
+               "Rows" -> {{None}}}, 
+             GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{1.45}}}, 
+             GridBoxSpacings -> {"Columns" -> {{0}}}, 
+             BaselinePosition -> {{1, 1}, Baseline}], "Grid"], RoundingRadius -> 
+           4, Background -> GrayLevel[0.9333333333333333], 
+           FrameMargins -> {{0, 0}, {-1, -1}}, FrameStyle -> {
+             GrayLevel[0.8352941176470589], 
+             AbsoluteThickness[1]}, BaselinePosition -> Baseline, 
+           StripOnInput -> False]& )}], 
+      Cell[
+       StyleData["Key2"], 
+       TemplateBoxOptions -> {DisplayFunction -> (TemplateBox[{
+            TemplateBox[{#, 
+              GrayLevel[0.93]}, "Key0"], 
+            TemplateBox[{3}, "Spacer1"], 
+            TemplateBox[{#2, 
+              GrayLevel[0.93]}, "Key0"], 
+            TemplateBox[{3}, "Spacer1"], 
+            TemplateBox[{#3, 
+              GrayLevel[0.99]}, "Key0"]}, "RowDefault"]& )}], 
+      Cell[
+       StyleData["Key2old"], 
+       TemplateBoxOptions -> {DisplayFunction -> (FrameBox[
+           TagBox[
+            GridBox[{{
+               ItemBox[
+                
+                TemplateBox[{"\[ThickSpace]", #, "\[ThickSpace]"}, 
+                 "RowDefault"], Background -> GrayLevel[0.9333333333333333], 
+                StripOnInput -> False], 
+               ItemBox[
+                
+                TemplateBox[{"\[ThickSpace]", #2, "\[ThickSpace]"}, 
+                 "RowDefault"], Background -> GrayLevel[0.9333333333333333], 
+                StripOnInput -> False], 
+               ItemBox[
+                
+                TemplateBox[{"\[ThickSpace]", #3, "\[ThickSpace]"}, 
+                 "RowDefault"], Background -> GrayLevel[1], StripOnInput -> 
+                False]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Center}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+             False, GridBoxDividers -> {
+              "ColumnsIndexed" -> {
+                2 -> GrayLevel[0.8352941176470589], 3 -> 
+                 GrayLevel[0.8352941176470589]}, "Rows" -> {{None}}}, 
+             GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{1.45}}}, 
+             GridBoxSpacings -> {"Columns" -> {{0}}}, 
+             BaselinePosition -> {{1, 1}, Baseline}], "Grid"], RoundingRadius -> 
+           4, Background -> GrayLevel[0.9333333333333333], 
+           FrameMargins -> {{0, 0}, {-1, -1}}, FrameStyle -> {
+             GrayLevel[0.8352941176470589], 
+             AbsoluteThickness[1]}, BaselinePosition -> Baseline, 
+           StripOnInput -> False]& )}], 
+      Cell[
+       StyleData["Key3"], 
+       TemplateBoxOptions -> {DisplayFunction -> (TemplateBox[{
+            TemplateBox[{#, 
+              GrayLevel[0.93]}, "Key0"], 
+            TemplateBox[{3}, "Spacer1"], 
+            TemplateBox[{#2, 
+              GrayLevel[0.93]}, "Key0"], 
+            TemplateBox[{3}, "Spacer1"], 
+            TemplateBox[{#3, 
+              GrayLevel[0.93]}, "Key0"], 
+            TemplateBox[{3}, "Spacer1"], 
+            TemplateBox[{#4, 
+              GrayLevel[0.99]}, "Key0"]}, "RowDefault"]& )}], 
+      Cell[
+       StyleData["Key3old"], 
+       TemplateBoxOptions -> {DisplayFunction -> (FrameBox[
+           TagBox[
+            GridBox[{{
+               ItemBox[
+                
+                TemplateBox[{"\[ThickSpace]", #, "\[ThickSpace]"}, 
+                 "RowDefault"], Background -> GrayLevel[0.9333333333333333], 
+                StripOnInput -> False], 
+               ItemBox[
+                
+                TemplateBox[{"\[ThickSpace]", #2, "\[ThickSpace]"}, 
+                 "RowDefault"], Background -> GrayLevel[0.9333333333333333], 
+                StripOnInput -> False], 
+               ItemBox[
+                
+                TemplateBox[{"\[ThickSpace]", #3, "\[ThickSpace]"}, 
+                 "RowDefault"], Background -> GrayLevel[0.9333333333333333], 
+                StripOnInput -> False], 
+               ItemBox[
+                
+                TemplateBox[{"\[ThickSpace]", #4, "\[ThickSpace]"}, 
+                 "RowDefault"], Background -> GrayLevel[1], StripOnInput -> 
+                False]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Center}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+             False, GridBoxDividers -> {
+              "ColumnsIndexed" -> {
+                2 -> GrayLevel[0.8352941176470589], 3 -> 
+                 GrayLevel[0.8352941176470589], 4 -> 
+                 GrayLevel[0.8352941176470589]}, "Rows" -> {{None}}}, 
+             GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{1.45}}}, 
+             GridBoxSpacings -> {"Columns" -> {{0}}}, 
+             BaselinePosition -> {{1, 1}, Baseline}], "Grid"], RoundingRadius -> 
+           4, Background -> GrayLevel[0.9333333333333333], 
+           FrameMargins -> {{0, 0}, {-1, -1}}, FrameStyle -> {
+             GrayLevel[0.8352941176470589], 
+             AbsoluteThickness[1]}, BaselinePosition -> Baseline, 
+           StripOnInput -> False]& )}]}, Open]]}, Visible -> False, 
+  FrontEndVersion -> "12.0 para Linux x86 (64-bit) (April 8, 2019)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 192, 3, 86, "Title",ExpressionUUID->"82a39173-be46-4004-a4e4-5f8a1a5ce878"],
+Cell[775, 27, 450, 8, 36, "Text",ExpressionUUID->"c1c66dcc-7997-4070-833e-aba6bb3c4a2d"],
+Cell[1228, 37, 228, 5, 36, "Text",ExpressionUUID->"d62d5d69-92fa-4534-a802-a8af3daee32c"],
+Cell[1459, 44, 246, 5, 34, "Input",ExpressionUUID->"856a1d42-604e-467a-8d2f-eb9742370bdd"],
+Cell[1708, 51, 556, 10, 108, "Text",ExpressionUUID->"6549917f-40e7-4b15-87b7-206616522cf5"],
+Cell[2267, 63, 459, 12, 34, "Input",ExpressionUUID->"158dce43-04d6-4acc-bbb7-f6be6eda428c"],
+Cell[2729, 77, 381, 8, 36, "Text",ExpressionUUID->"9614a701-f51a-4a83-95ea-9288a6f69bc5"],
+Cell[3113, 87, 660, 17, 62, "Input",ExpressionUUID->"b42d49aa-5ce9-44e2-8af3-d8bbe9e91c5f"],
+Cell[3776, 106, 235, 6, 36, "Text",ExpressionUUID->"7bb27618-7395-474c-8e87-58c49af62c0f"],
+Cell[4014, 114, 834, 21, 116, "Input",ExpressionUUID->"decd7b41-4a0f-438e-9593-ed8dd534a9fa"],
+Cell[4851, 137, 438, 9, 36, "Text",ExpressionUUID->"3465e794-4f6b-4bc3-b42f-8cda4b8907a7"],
+Cell[5292, 148, 698, 18, 34, "Input",ExpressionUUID->"c2c5460c-37fe-4c4b-978c-8c8f188396cb"],
+Cell[5993, 168, 253, 6, 36, "Text",ExpressionUUID->"c588c75b-28d0-4b3c-944d-df58a5ab0a58"],
+Cell[6249, 176, 367, 9, 34, "Input",ExpressionUUID->"bc1c5cd5-e098-4a04-bb23-2f05147130ce"],
+Cell[6619, 187, 362, 7, 36, "Text",ExpressionUUID->"6995170c-0f11-4c2c-9901-5bd22b102356"],
+Cell[6984, 196, 467, 11, 34, "Input",ExpressionUUID->"ab8acdcc-d87f-4795-b11d-fad9908921a9"],
+Cell[7454, 209, 296, 6, 36, "Text",ExpressionUUID->"a49ed9c3-a67c-40c6-b5d4-39343f89cf5a"],
+Cell[7753, 217, 881, 22, 116, "Input",ExpressionUUID->"0e80767e-e1d6-4498-8b2f-2a33167a8406"],
+Cell[8637, 241, 247, 6, 36, "Text",ExpressionUUID->"a62f16d3-bb91-4645-b8d8-340f83c0dbf2"],
+Cell[8887, 249, 244, 4, 34, "Input",ExpressionUUID->"853bbab1-0280-4d1a-b495-4d8dff5113ae"],
+Cell[9134, 255, 483, 9, 36, "Text",ExpressionUUID->"fc287e46-f29a-4326-9c94-abc5f85f419a"],
+Cell[9620, 266, 2417, 75, 197, "Input",ExpressionUUID->"b6896347-ef43-491e-8942-6a4b4db01160"],
+Cell[12040, 343, 180, 3, 36, "Text",ExpressionUUID->"b3348ddc-76ab-4880-8c01-fa63ced345c2"],
+Cell[12223, 348, 302, 6, 34, "Input",ExpressionUUID->"bfb3c69b-f613-4b92-858f-5a30a111d8c1"],
+Cell[12528, 356, 410, 8, 36, "Text",ExpressionUUID->"6bade03e-e6ca-4ef5-9802-d7e0cc68dc4b"],
+Cell[CellGroupData[{
+Cell[12963, 368, 245, 6, 54, "Subtitle",ExpressionUUID->"3350275d-8f19-462e-9e39-5a6869c6964b"],
+Cell[13211, 376, 214, 7, 84, "Text",ExpressionUUID->"948da342-36a3-4250-8e94-11f6f5531f12"],
+Cell[13428, 385, 333, 7, 36, "Text",ExpressionUUID->"c8c991c8-8d52-413e-ba28-e774840280f3"],
+Cell[13764, 394, 274, 4, 34, "Input",ExpressionUUID->"c4c9a020-0d76-45fe-96c7-bc10f9905325"],
+Cell[14041, 400, 162, 3, 36, "Text",ExpressionUUID->"0ab3ac96-0fe0-4471-95af-dc83ca9fc70b"],
+Cell[14206, 405, 147, 3, 62, "Input",ExpressionUUID->"ad264bd7-8599-49c0-8f5e-7b54cef6314c"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
