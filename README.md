@@ -1,4 +1,5 @@
-# EDI
+# Ecuaciones Diferenciales I
+## Semestre 2020-2. Grupo 4159
 Repositorio para el curso de Ecuaciones Diferenciales I de la Facultad de Ciencias
 
 PRESENTACIÓN:
