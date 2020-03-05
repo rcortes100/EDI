@@ -22,3 +22,17 @@ Wright, Michael R. Cullen ; traducción Ana Elizabeth García Hernández
 
 Ecuaciones diferenciales y problemas con valores en la frontera / William E. Boyce, Richard C.
 DiPrima
+
+### FECHAS IMPORTANTES (se actualizarán constantemente)
+
+| Evento                    | Fecha                   | Observaciones   |
+| ------------------------- |:-----------------------:| ---------------:|
+| Entrega Tarea 1           | Entregada               |                 |
+| Entrega Tarea 2           | Entregada               |                 |
+| Entrega Tarea 3           | Entregada               |                 |
+| Entrega Tarea 4           | 12/03/2020 (jueves)     |                 |
+| Entrega Tarea 5           | 19/03/2020 (jueves)     |                 |
+| **Primer Examen Parcial** | **21/03/2020 (sábado)** |                 |
+| Entrega Tarea 6           | Por confirmar           |                 |
+| Entrega Tarea 7           | Por confirmar           |                 |
+| Entrega Tarea 8           | Por confirmar           |                 |
