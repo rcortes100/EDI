@@ -25,14 +25,14 @@ DiPrima
 
 ### FECHAS IMPORTANTES (se actualizarán constantemente)
 
-| Evento                                          | Fecha                   | Observaciones             |
-| ------------------------------------------------|:-----------------------:|:-------------------------:|
-| Entrega [Tarea1](../master/Tareas/Tarea01.pdf)  | Entregada               |                           |
-| Entrega [Tarea2](../master/Tareas/Tarea02.pdf)  | Entregada               |                           |
-| Entrega [Tarea3](../master/Tareas/Tarea03.pdf)  | Entregada               |                           |
-| Entrega [Tarea4](../master/Tareas/Tarea04.pdf)  | 12/03/2020 (jueves)     | Realizar en *Mathematica* |
-| Entrega [Tarea5](../master/Tareas/Tarea05.pdf)  | 19/03/2020 (jueves)     |                           |
-| **Primer Examen Parcial**                       | **21/03/2020 (sábado)** |                           |
-| Entrega [Tarea6](../master/Tareas/Tarea06.pdf)  | Por confirmar           |                           |
-| Entrega [Tarea7](../master/Tareas/Tarea07.pdf)  | Por confirmar           |                           |
-| Entrega [Tarea8](../master/Tareas/Tarea08.pdf)  | Por confirmar           |                           |
+| Evento                                           | Fecha                   | Observaciones             |
+| -------------------------------------------------|:-----------------------:|:-------------------------:|
+| Entrega [Tarea 1](../master/Tareas/Tarea01.pdf)  | Entregada               |                           |
+| Entrega [Tarea 2](../master/Tareas/Tarea02.pdf)  | Entregada               |                           |
+| Entrega [Tarea 3](../master/Tareas/Tarea03.pdf)  | Entregada               |                           |
+| Entrega [Tarea 4](../master/Tareas/Tarea04.pdf)  | 12/03/2020 (jueves)     | Realizar en *Mathematica* |
+| Entrega [Tarea 5](../master/Tareas/Tarea05.pdf)  | 19/03/2020 (jueves)     |                           |
+| **Primer Examen Parcial**                        | **21/03/2020 (sábado)** |                           |
+| Entrega [Tarea 6](../master/Tareas/Tarea06.pdf)  | Por confirmar           |                           |
+| Entrega [Tarea 7](../master/Tareas/Tarea07.pdf)  | Por confirmar           |                           |
+| Entrega [Tarea 8](../master/Tareas/Tarea08.pdf)  | Por confirmar           |                           |
