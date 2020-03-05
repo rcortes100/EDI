@@ -25,14 +25,14 @@ DiPrima
 
 ### FECHAS IMPORTANTES (se actualizarán constantemente)
 
-| Evento                    | Fecha                   | Observaciones   |
-| ------------------------- |:-----------------------:| ---------------:|
-| Entrega Tarea 1           | Entregada               |                 |
-| Entrega Tarea 2           | Entregada               |                 |
-| Entrega Tarea 3           | Entregada               |                 |
-| Entrega Tarea 4           | 12/03/2020 (jueves)     |                 |
-| Entrega Tarea 5           | 19/03/2020 (jueves)     |                 |
-| **Primer Examen Parcial** | **21/03/2020 (sábado)** |                 |
-| Entrega Tarea 6           | Por confirmar           |                 |
-| Entrega Tarea 7           | Por confirmar           |                 |
-| Entrega Tarea 8           | Por confirmar           |                 |
+| Evento                                                        | Fecha                   | Observaciones   |
+| ------------------------------------------------------------- |:-----------------------:| -----------------------:|
+| Entrega [Tarea1](../blob/master/Tareas/Tarea01.pdf)           | Entregada               |                         |
+| Entrega [Tarea2](../blob/master/Tareas/Tarea02.pdf)           | Entregada               |                         |
+| Entrega [Tarea3](../blob/master/Tareas/Tarea03.pdf)           | Entregada               |                         |
+| Entrega [Tarea4](../blob/master/Tareas/Tarea04.pdf)           | 12/03/2020 (jueves)     |Realizar en *Mathematica*|
+| Entrega [Tarea5](../blob/master/Tareas/Tarea05.pdf)           | 19/03/2020 (jueves)     |                         |
+| **Primer Examen Parcial**                                     | **21/03/2020 (sábado)** |                         |
+| Entrega [Tarea6](../blob/master/Tareas/Tarea06.pdf)           | Por confirmar           |                         |
+| Entrega [Tarea7](../blob/master/Tareas/Tarea07.pdf)           | Por confirmar           |                         |
+| Entrega [Tarea8](../blob/master/Tareas/Tarea08.pdf)           | Por confirmar           |                         |
