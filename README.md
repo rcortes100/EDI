@@ -2,6 +2,8 @@
 ## Semestre 2020-2. Grupo 4159
 Repositorio para el curso de Ecuaciones Diferenciales I de la Facultad de Ciencias
 
+### ¡AVISOS IMPORTANTES DESPUÉS DE LA PRESENTACIÓN!
+
 PRESENTACIÓN:
 
 En este cuso, el alumno será introducido a la teoría de las ecuaciones diferenciales ordinarias
